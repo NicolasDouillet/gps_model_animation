@@ -2,7 +2,7 @@ function [] = gps_model_animation()
 % gps_model_animation : function to create an animated model of the GPS
 % showing its constellation and working principle.
 %
-% Author & support nicolas.douillet (at) free.fr, 2007-2021.
+% Author : nicolas.douillet9 (at) gmail.com, 2007-2024.
 
 
 theta = linspace(0,pi,36)'; % latitude angle vector
@@ -76,7 +76,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S5(2,1+mod(240+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S5(3,1+mod(240+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X5,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X5,1,2)') <= rlim
         plot3(X5(1,:),X5(2,:),X5(3,:),'g--','Linewidth',2), hold on;
         marker_color = wf;        
     else        
@@ -90,7 +90,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S5(2,1+mod(240+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S5(3,1+mod(240+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X5a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X5a,1,2)') <= rlim
         plot3(X5a(1,:),X5a(2,:),X5a(3,:),'g--','Linewidth',2), hold on;
         marker_color = wf;        
     else        
@@ -104,7 +104,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S5(2,1+mod(240+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S5(3,1+mod(240+b+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X5b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X5b,1,2)') <= rlim
         plot3(X5b(1,:),X5b(2,:),X5b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -118,7 +118,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S5(2,1+mod(240+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S5(3,1+mod(240+f+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X5f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X5f,1,2)') <= rlim
         plot3(X5f(1,:),X5f(2,:),X5f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -132,7 +132,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S6(2,1+mod(300+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S6(3,1+mod(300+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X6,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X6,1,2)') <= rlim
         plot3(X6(1,:),X6(2,:),X6(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -146,7 +146,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S6(2,1+mod(300+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S6(3,1+mod(300+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X6a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X6a,1,2)') <= rlim
         plot3(X6a(1,:),X6a(2,:),X6a(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -160,7 +160,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S6(2,1+mod(300+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S6(3,1+mod(300+b+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X6b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X6b,1,2)') <= rlim
         plot3(X6b(1,:),X6b(2,:),X6b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -174,7 +174,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S6(2,1+mod(300+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S6(3,1+mod(300+f+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X6f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X6f,1,2)') <= rlim
         plot3(X6f(1,:),X6f(2,:),X6f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -188,7 +188,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S4(2,1+mod(180+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S4(3,1+mod(180+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X4,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X4,1,2)') <= rlim
         plot3(X4(1,:),X4(2,:),X4(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -202,7 +202,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S4(2,1+mod(180+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S4(3,1+mod(180+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X4a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X4a,1,2)') <= rlim
         plot3(X4a(1,:),X4a(2,:),X4a(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -216,7 +216,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S4(2,1+mod(180+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S4(3,1+mod(180+b+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X4b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X4b,1,2)') <= rlim
         plot3(X4b(1,:),X4b(2,:),X4b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -230,7 +230,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S4(2,1+mod(180+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S4(3,1+mod(180+f+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X4f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X4f,1,2)') <= rlim
         plot3(X4f(1,:),X4f(2,:),X4f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -244,7 +244,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S3(2,1+mod(120+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S3(3,1+mod(120+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X3,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X3,1,2)') <= rlim
         plot3(X3(1,:),X3(2,:),X3(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -258,7 +258,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S3(2,1+mod(120+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S3(3,1+mod(120+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X3a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X3a,1,2)') <= rlim
         plot3(X3a(1,:),X3a(2,:),X3a(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -272,7 +272,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S3(2,1+mod(120+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S3(3,1+mod(120+b+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X3b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X3b,1,2)') <= rlim
         plot3(X3b(1,:),X3b(2,:),X3b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -286,7 +286,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S3(2,1+mod(120+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S3(3,1+mod(120+f+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X3f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X3f,1,2)') <= rlim
         plot3(X3f(1,:),X3f(2,:),X3f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -300,7 +300,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S2(2,1+mod(60+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S2(3,1+mod(60+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X2,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X2,1,2)') <= rlim
         plot3(X2(1,:),X2(2,:),X2(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -314,7 +314,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S2(2,1+mod(60+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S2(3,1+mod(60+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X2a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X2a,1,2)') <= rlim
         plot3(X2a(1,:),X2a(2,:),X2a(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -328,7 +328,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S2(2,1+mod(60+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S2(3,1+mod(60+b+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X2b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X2b,1,2)') <= rlim
         plot3(X2b(1,:),X2b(2,:),X2b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -342,7 +342,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S2(2,1+mod(60+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S2(3,1+mod(60+f+5*k,one_loop)) r*sin_quater_pi];
 
-    if sqrt(sum(diff(X2f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X2f,1,2)') <= rlim
         plot3(X2f(1,:),X2f(2,:),X2f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -356,7 +356,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
           S1(2,1+mod(0+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
           S1(3,1+mod(0+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X1,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X1,1,2)') <= rlim
         plot3(X1(1,:),X1(2,:),X1(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -370,7 +370,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S1(2,1+mod(0+a+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S1(3,1+mod(0+a+5*k,one_loop)) r*sin_quater_pi];
     
-    if sqrt(sum(diff(X1a,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X1a,1,2)') <= rlim
         plot3(X1a(1,:),X1a(2,:),X1a(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -384,7 +384,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S1(2,1+mod(0+b+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S1(3,1+mod(0+b+5*k,one_loop)) r*sin_quater_pi];
 
-    if sqrt(sum(diff(X1b,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X1b,1,2)') <= rlim
         plot3(X1b(1,:),X1b(2,:),X1b(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
@@ -398,7 +398,7 @@ for k = 0:71 % loop over phi vector (longitude angle) number of elements
            S1(2,1+mod(0+f+5*k,one_loop)) r*sin_quater_pi*sin(5*k*pi/180);...
            S1(3,1+mod(0+f+5*k,one_loop)) r*sin_quater_pi];
 
-    if sqrt(sum(diff(X1f,1,2).^2,1)) <= rlim
+    if vecnorm(diff(X1f,1,2)') <= rlim
         plot3(X1f(1,:),X1f(2,:),X1f(3,:),'g--','Linewidth',2), hold on;        
         marker_color = wf;        
     else        
